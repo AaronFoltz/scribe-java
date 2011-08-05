@@ -2,7 +2,6 @@ package org.scribe.oauth;
 
 import java.util.Map;
 
-import org.apache.log4j.Logger;
 import org.scribe.builder.api.DefaultApi10a;
 import org.scribe.model.OAuthConfig;
 import org.scribe.model.OAuthConstants;
@@ -94,8 +93,6 @@ public class OAuth10aServiceImpl implements OAuthService
 		request.addOAuthParameter(OAuthConstants.TOKEN, expiredToken.getToken());
 		request.addOAuthParameter("oauth_session_handle", sessionHandle);
 
-		logger.debug("[REQUEST]: " + request);
-		logger.debug("[ExpiredToken] : " + expiredToken);
 		addOAuthParams(request, expiredToken);
 
 		addSignature(request);
